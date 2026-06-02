@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,23 @@
     <!-- Ultimate Font Frenzy Library (Asian + Variable Display) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&family=Unbounded:wght@200..900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&family=Unbounded:wght@200..900&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="dark-theme">
     <script>
-    // If the memory specifically says 'light', make it light.
-    // Otherwise (or if it's their first visit), force it to be dark!
-    if (localStorage.getItem('portfolio-theme') === 'light') {
-        document.body.classList.remove('dark-theme');
-    } else {
-        document.body.classList.add('dark-theme');
-    }
-</script>
-   <!--PRELOADER "cinematic splash screen"-->
+        // If the memory specifically says 'light', make it light.
+        // Otherwise (or if it's their first visit), force it to be dark!
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+            document.body.classList.remove('dark-theme');
+        } else {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
+    <!--PRELOADER "cinematic splash screen"-->
 
     <div id="preloader">
         <h1 class="preloader-text" data-text="Tushar Das™">Tushar Das™</h1>
@@ -32,8 +36,22 @@
         <div class="logo"><span class="logo-first">Tushar</span> <span class="logo-last">Das™</span></div>
         <div class="nav-actions">
             <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
             </button>
             <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
                 <span></span>
@@ -80,7 +98,8 @@
         <div class="typewriter">
             <h1 id="typewriter-text" data-text="Shaping Digital Experiences."></h1>
         </div>
-        <p id="typewriter-sub" class="hero-sub hidden">As a multidisciplinary digital designer, I specialize in crafting minimal, structural layouts and impactful visual identities that elevate brands and engage audiences.</p>
+        <p id="typewriter-sub" class="hero-sub hidden">As a multidisciplinary digital designer, I specialize in crafting
+            minimal, structural layouts and impactful visual identities that elevate brands and engage audiences.</p>
     </div>
 
     <section class="fade-in-up delay-2">
@@ -88,7 +107,7 @@
             <span>© Featured Projects ビジュアル</span>
             <span>Creative Development</span>
         </div>
-        
+
         <div class="grid">
             <a href="#" class="project-card" style="background: url('assets/images/image1.png') center/cover;">
                 <div class="card-content">
@@ -96,8 +115,9 @@
                     <div class="project-category">Branding</div>
                 </div>
             </a>
-            
-            <a href="#" class="project-card" style="background: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=600&auto=format&fit=crop') center/cover;">
+
+            <a href="#" class="project-card"
+                style="background: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=600&auto=format&fit=crop') center/cover;">
                 <div class="card-content">
                     <div class="project-title">Project 2</div>
                     <div class="project-category">Web Design</div>
@@ -111,19 +131,22 @@
             <span>© Capabilities</span>
             <span>Digital Execution</span>
         </div>
-        
+
         <div class="grid">
             <div>
                 <h3 style="margin-bottom: 1rem;">Art Direction</h3>
-                <p style="color: var(--accent-color);">We guide every visual decision from start to finish, ensuring clarity, emotion, and impact across every touchpoint.</p>
+                <p style="color: var(--accent-color);">We guide every visual decision from start to finish, ensuring
+                    clarity, emotion, and impact across every touchpoint.</p>
             </div>
             <div>
                 <h3 style="margin-bottom: 1rem;">Brand Identity</h3>
-                <p style="color: var(--accent-color);">From strategy to execution, we shape consistent brand systems that speak clearly and feel uniquely ownable.</p>
+                <p style="color: var(--accent-color);">From strategy to execution, we shape consistent brand systems
+                    that speak clearly and feel uniquely ownable.</p>
             </div>
             <div>
                 <h3 style="margin-bottom: 1rem;">Motion Direction</h3>
-                <p style="color: var(--accent-color);">We use motion as a design tool — adding clarity, rhythm, and energy to digital experiences with intention.</p>
+                <p style="color: var(--accent-color);">We use motion as a design tool — adding clarity, rhythm, and
+                    energy to digital experiences with intention.</p>
             </div>
         </div>
     </section>
@@ -134,4 +157,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
