@@ -215,7 +215,7 @@ nav {
     max-width: 600px;
 }
 
-/* Typewriter Animation */
+/* Scramble Text Animation */
 .typewriter {
     display: flex;
     justify-content: center;
@@ -226,19 +226,26 @@ nav {
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
-    border-right: 3px solid var(--text-color);
-    white-space: nowrap;
-    animation: blink-caret 0.75s step-end infinite;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 1.2em;
 }
 
-.typewriter h1.done {
-    border-right-color: transparent;
-    animation: none;
+.typewriter h1 .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--text-color); }
+.typewriter h1 .char.decoded {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.typewriter h1 .char.scrambling {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    color: var(--accent-color);
 }
 
 .hero-sub {

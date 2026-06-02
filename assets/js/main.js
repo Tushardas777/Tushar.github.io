@@ -168,34 +168,66 @@ if (preloader && preloaderText && siteLogo) {
 }
 
 // ==========================================
-// 7. TYPEWRITER ANIMATION ENGINE
+// 7. CIPHER SCRAMBLE TEXT ANIMATION
 // ==========================================
 const typewriterEl = document.getElementById('typewriter-text');
 const typewriterSub = document.getElementById('typewriter-sub');
 
 if (typewriterEl) {
     const fullText = typewriterEl.getAttribute('data-text');
-    let i = 0;
+    const glyphs = '!@#$%^&*()_+-=[]{}|;:,.<>?/~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-    function typeChar() {
-        if (i < fullText.length) {
-            typewriterEl.textContent += fullText.charAt(i);
-            i++;
-            setTimeout(typeChar, 80);
-        } else {
-            // Typing done — hide cursor after a short pause
-            setTimeout(() => {
-                typewriterEl.classList.add('done');
-            }, 1500);
+    // Create a span for each character
+    typewriterEl.innerHTML = fullText
+        .split('')
+        .map((ch, i) => `<span class="char" data-index="${i}" data-final="${ch}">${ch === ' ' ? '&nbsp;' : '&nbsp;'}</span>`)
+        .join('');
 
-            // Fade in the subtitle
+    const chars = typewriterEl.querySelectorAll('.char');
+
+    function scrambleChar(span, finalChar, resolveDelay) {
+        if (finalChar === ' ') {
+            // Spaces resolve instantly
+            span.innerHTML = '&nbsp;';
+            span.classList.add('decoded');
+            return;
+        }
+
+        let scrambleCount = 0;
+        const maxScrambles = 4 + Math.floor(Math.random() * 6); // 4-9 flickers
+
+        // Start scrambling immediately
+        span.classList.add('scrambling');
+
+        const flickerInterval = setInterval(() => {
+            span.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+            scrambleCount++;
+
+            if (scrambleCount >= maxScrambles) {
+                clearInterval(flickerInterval);
+                // Lock in the final character
+                span.textContent = finalChar;
+                span.classList.remove('scrambling');
+                span.classList.add('decoded');
+            }
+        }, 50);
+    }
+
+    // Start the animation after a delay
+    setTimeout(() => {
+        chars.forEach((span, i) => {
+            const finalChar = span.getAttribute('data-final');
+            // Stagger each character's start by 60ms
+            setTimeout(() => scrambleChar(span, finalChar, i), i * 60);
+        });
+
+        // Fade in subtitle after all characters are done
+        const totalTime = chars.length * 60 + 500;
+        setTimeout(() => {
             if (typewriterSub) {
                 typewriterSub.classList.remove('hidden');
                 typewriterSub.classList.add('visible');
             }
-        }
-    }
-
-    // Start typing after a delay to let the page load animations settle
-    setTimeout(typeChar, 1500);
+        }, totalTime);
+    }, 1500);
 }
