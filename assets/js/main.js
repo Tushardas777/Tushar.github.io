@@ -8,15 +8,15 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // 3. Find ALL clickable things (links and buttons)
-const allClickables = document.querySelectorAll('a, button'); 
+const allClickables = document.querySelectorAll('a, button');
 
 // 4. Make the cursor grow when it touches any clickable item
 allClickables.forEach(item => {
     item.addEventListener('mouseenter', () => {
-        cursor.classList.add('hovering'); 
+        cursor.classList.add('hovering');
     });
     item.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hovering'); 
+        cursor.classList.remove('hovering');
     });
 });
 
@@ -55,10 +55,10 @@ if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         // Add smooth fading class
         document.body.classList.add('theme-transition');
-        
+
         // Flip the colors
         document.body.classList.toggle('dark-theme');
-        
+
         // Save the new state to memory
         if (document.body.classList.contains('dark-theme')) {
             localStorage.setItem('portfolio-theme', 'dark');
@@ -72,25 +72,25 @@ if (themeToggle) {
 // ==========================================
 const preloader = document.getElementById('preloader');
 const preloaderText = document.querySelector('.preloader-text');
-const siteLogo = document.querySelector('.logo'); 
+const siteLogo = document.querySelector('.logo');
 
 const ultimateFrenzyFrames = [
-    { text: "TUSHAR DAS", font: "'Unbounded', sans-serif" },      
-    { text: "Tushar Das™", font: "'Syne', sans-serif" },          
-    { text: "TUSHAR", font: "'Anton', sans-serif" },             
-    { text: "トゥシャル・ダス", font: "'Noto Sans JP', sans-serif" },  
-    { text: "Tushar Das", font: "'Noto Sans JP', sans-serif" },  
-    { text: "Tushar Das", font: "'Bodoni Moda', serif" },        
-    { text: "TUSHAR DAS", font: "'Cinzel', serif" },             
-    { text: "トゥシャル", font: "'Noto Sans JP', sans-serif" },    
-    { text: "투샤르 다스", font: "'Noto Sans KR', sans-serif" },        
-    { text: "Tus.har Das", font: "'Space Grotesk', sans-serif" },  
-    { text: "TUSHAR", font: "'Bebas Neue', sans-serif" },        
-    { text: "トゥシャル・ダス", font: "'Noto Sans JP', sans-serif" },  
-    { text: "투샤르 다스", font: "'Noto Sans KR', sans-serif" },        
-    { text: "Tushar Das™", font: "'Unbounded', sans-serif" },      
-    { text: "투샤르", font: "'Noto Sans KR', sans-serif" },         
-    { text: "Tus.har", font: "'Space Grotesk', sans-serif" },     
+    { text: "TUSHAR DAS", font: "'Unbounded', sans-serif" },
+    { text: "Tushar Das™", font: "'Syne', sans-serif" },
+    { text: "TUSHAR", font: "'Anton', sans-serif" },
+    { text: "トゥシャル・ダス", font: "'Noto Sans JP', sans-serif" },
+    { text: "Tushar Das", font: "'Noto Sans JP', sans-serif" },
+    { text: "Tushar Das", font: "'Bodoni Moda', serif" },
+    { text: "TUSHAR DAS", font: "'Cinzel', serif" },
+    { text: "トゥシャル", font: "'Noto Sans JP', sans-serif" },
+    { text: "투샤르 다스", font: "'Noto Sans KR', sans-serif" },
+    { text: "Tus.har Das", font: "'Space Grotesk', sans-serif" },
+    { text: "TUSHAR", font: "'Bebas Neue', sans-serif" },
+    { text: "トゥシャル・ダス", font: "'Noto Sans JP', sans-serif" },
+    { text: "투샤르 다스", font: "'Noto Sans KR', sans-serif" },
+    { text: "Tushar Das™", font: "'Unbounded', sans-serif" },
+    { text: "투샤르", font: "'Noto Sans KR', sans-serif" },
+    { text: "Tus.har", font: "'Space Grotesk', sans-serif" },
     { text: "Tushar Das", font: "'Bodoni Moda', serif" },
     { text: "TUSHAR", font: "'Syne', sans-serif" },
     { text: "Tushar Das™", font: "'Anton', sans-serif" },
@@ -104,63 +104,63 @@ if (preloader && preloaderText && siteLogo) {
 
     if (isRefresh || !sessionStorage.getItem('intro-played')) {
         preloader.style.display = 'flex';
-        
+
         setTimeout(() => {
             preloaderText.classList.add('run-wipe');
-            
+
             setTimeout(() => {
                 preloaderText.classList.add('hide-cursor', 'start-frenzy');
-                
+
                 let flashes = 0;
-                
+
                 const frenzyTimer = setInterval(() => {
                     const frame = ultimateFrenzyFrames[Math.floor(Math.random() * ultimateFrenzyFrames.length)];
                     preloaderText.style.fontFamily = frame.font;
-                    preloaderText.textContent = frame.text; 
+                    preloaderText.textContent = frame.text;
                     flashes++;
-                    
+
                     if (flashes >= 13) {
                         clearInterval(frenzyTimer);
-                        
+
                         // Temporarily freeze CSS to calculate math perfectly
-                        preloaderText.classList.remove('start-frenzy'); 
-                        preloaderText.style.transition = 'none'; 
-                        
+                        preloaderText.classList.remove('start-frenzy');
+                        preloaderText.style.transition = 'none';
+
                         preloaderText.style.fontFamily = "'Inter', sans-serif";
                         preloaderText.textContent = "Tushar Das™";
-                        
+
                         const textRect = preloaderText.getBoundingClientRect();
                         preloaderText.style.left = textRect.left + 'px';
                         preloaderText.style.top = textRect.top + 'px';
                         preloaderText.style.transform = 'none';
-                        preloaderText.style.animation = 'none'; 
+                        preloaderText.style.animation = 'none';
                         preloaderText.style.transformOrigin = 'top left';
-                        
-                        preloaderText.getBoundingClientRect(); 
-                        
+
+                        preloaderText.getBoundingClientRect();
+
                         const logoRect = siteLogo.getBoundingClientRect();
                         const moveX = logoRect.left - textRect.left;
                         const moveY = logoRect.top - textRect.top;
                         const scale = logoRect.height / textRect.height;
-                        
+
                         // UNLOCK CSS so the flight and fade can actually happen!
-                        preloaderText.style.transition = ''; 
-                        
+                        preloaderText.style.transition = '';
+
                         // Trigger Fusion Flight
                         preloader.classList.add('fuse-bg');
                         preloaderText.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
                         preloaderText.classList.add('fuse-text');
-                        
+
                         setTimeout(() => {
                             preloader.classList.add('preloader-hidden');
                             sessionStorage.setItem('intro-played', 'true');
                         }, 1200);
                     }
-                }, 160); 
-                
-            }, 1000); 
-            
-        }, 800); 
+                }, 160);
+
+            }, 1000);
+
+        }, 800);
 
     } else {
         preloader.style.display = 'none';
@@ -224,10 +224,11 @@ if (typewriterEl) {
         // Fade in subtitle after all characters are done
         const totalTime = chars.length * 60 + 500;
         setTimeout(() => {
-            if (typewriterSub) {
-                typewriterSub.classList.remove('hidden');
-                typewriterSub.classList.add('visible');
-            }
+            const subs = document.querySelectorAll('.hero-sub');
+            subs.forEach(sub => {
+                sub.classList.remove('hidden');
+                sub.classList.add('visible');
+            });
         }, totalTime);
     }, 1500);
 }

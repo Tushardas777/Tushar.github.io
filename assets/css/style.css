@@ -2,17 +2,20 @@
    1. GLOBAL VARIABLES & SETTINGS
    ========================================= */
 :root {
-    --bg-color: #f4f4f4; /* Light grey background */
-    --text-color: #111111; /* Near black text */
-    --accent-color: #666666; /* Grey for secondary text */
+    --bg-color: #f4f4f4;
+    /* Light grey background */
+    --text-color: #111111;
+    /* Near black text */
+    --accent-color: #666666;
+    /* Grey for secondary text */
 }
 
 /* Reset and force hide the default cursor */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    cursor: none !important; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
 }
 
 /* =========================================
@@ -23,12 +26,13 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.5;
-    padding: 3rem 5%; 
+    padding: 3rem 5%;
 }
 
-html, body {
+html,
+body {
     /* Prevents the website from ever scrolling sideways */
-    overflow-x: hidden; 
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -41,9 +45,9 @@ nav {
     margin-bottom: 4rem;
 }
 
-.logo { 
-    font-weight: 700; 
-    font-size: 1.2rem; 
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     gap: 0.35rem;
@@ -75,8 +79,19 @@ nav {
    ========================================= */
 .hero-centered {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 2rem;
+}
+
+.hero-roles {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-color);
+    font-weight: 500;
+    text-align: center;
 }
 
 .hero-photo {
@@ -89,7 +104,7 @@ nav {
     background: linear-gradient(135deg, #ff6b6b, #a855f7, #6366f1, #ff6b6b);
     background-size: 300% 300%;
     animation: photoPopIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both,
-               gradientShift 4s ease infinite 1.4s;
+        gradientShift 4s ease infinite 1.4s;
     box-shadow: 0 8px 32px rgba(168, 85, 247, 0.25);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -97,7 +112,7 @@ nav {
 .hero-photo:hover {
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 16px 48px rgba(168, 85, 247, 0.45),
-                0 0 0 1px rgba(168, 85, 247, 0.1);
+        0 0 0 1px rgba(168, 85, 247, 0.1);
 }
 
 .profile-img {
@@ -126,13 +141,16 @@ nav {
         opacity: 0;
         transform: scale(0) rotate(-12deg);
     }
+
     60% {
         opacity: 1;
         transform: scale(1.08) rotate(2deg);
     }
+
     80% {
         transform: scale(0.96) rotate(-1deg);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) rotate(0deg);
@@ -141,9 +159,17 @@ nav {
 
 /* === Rotating gradient border glow === */
 @keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -151,7 +177,7 @@ nav {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .hero-photo {
         width: 160px;
         height: 200px;
@@ -181,7 +207,10 @@ nav {
 /* =========================================
    3. HERO & GRID SECTIONS
    ========================================= */
-.hero { margin-bottom: 6rem; }
+.hero {
+    margin-bottom: 6rem;
+}
+
 .hero h1 {
     font-size: clamp(2.5rem, 6vw, 5rem);
     line-height: 1.1;
@@ -189,6 +218,7 @@ nav {
     margin-bottom: 2rem;
     max-width: 900px;
 }
+
 .hero p {
     font-size: 1.2rem;
     color: var(--accent-color);
@@ -262,6 +292,20 @@ nav {
     transform: translateY(0);
 }
 
+.about-me-title {
+    display: inline-block;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 1.5rem 0;
+    padding: 0.3em 0.8em;
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-color);
+}
+
 .name-banner {
     width: 100%;
     border-top: 1px solid rgba(128, 128, 128, 0.3);
@@ -283,8 +327,13 @@ nav {
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .name-banner h2 {
@@ -332,20 +381,32 @@ nav {
     text-decoration: none;
     color: var(--text-color);
 }
-.project-card:hover { transform: translateY(-5px); } 
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
 
 .card-content {
     background: rgba(255, 255, 255, 0.9);
     padding: 1rem;
     border-radius: 4px;
 }
-.project-title { font-weight: 500; font-size: 1.2rem; }
-.project-category { font-size: 0.9rem; color: var(--accent-color); }
+
+.project-title {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.project-category {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
 
 footer {
     margin-top: 6rem;
     padding-top: 2rem;
-    border-bottom: 1px solid #ddd; /* changed to match nav */
+    border-bottom: 1px solid #ddd;
+    /* changed to match nav */
     border-top: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
@@ -363,41 +424,41 @@ footer {
 
 /* 2. Hide the custom white dot by default (for mobile) */
 .custom-cursor {
-    display: none; 
+    display: none;
 }
 
 /* 3. ONLY run this if the device has a real Mouse (Desktops/Laptops) */
 @media (pointer: fine) {
-    
+
     /* Turn off standard cursor */
     * {
         cursor: none !important;
     }
-    
+
     /* Turn on custom cursor */
     .custom-cursor {
-        display: block; 
-        position: fixed; 
+        display: block;
+        position: fixed;
         top: 0;
         left: 0;
-        width: 15px; 
+        width: 15px;
         height: 15px;
-        background-color: white; 
-        border-radius: 50%; 
-        z-index: 9999; 
-        transform: translate(-50%, -50%); 
-        pointer-events: none; 
+        background-color: white;
+        border-radius: 50%;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
         transition: width 0.2s ease, height 0.2s ease;
-        mix-blend-mode: difference; 
-        
+        mix-blend-mode: difference;
+
         /* THE MAGIC LINE: Inverts color based on background */
-         mix-blend-mode: difference; 
-    } 
-    
+        mix-blend-mode: difference;
+    }
+
     .custom-cursor.hovering {
-        width: 25px; 
+        width: 25px;
         height: 25px;
-        background-color: rgb(255, 255, 255); 
+        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -413,6 +474,7 @@ footer {
     display: inline-block;
     transition: color 0.3s ease;
 }
+
 .huge-link:hover {
     color: var(--accent-color);
 }
@@ -422,6 +484,7 @@ footer {
     flex-wrap: wrap;
     gap: 1.5rem;
 }
+
 .social-icons a {
     display: flex;
     align-items: center;
@@ -434,35 +497,40 @@ footer {
     text-decoration: none;
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .social-icons a::before {
     content: '';
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--text-color); 
+    background-color: var(--text-color);
     transition: top 0.3s ease;
-    z-index: -1; 
+    z-index: -1;
 }
+
 .social-icons a:hover::before {
-    top: 0; 
+    top: 0;
 }
+
 .social-icons a:hover {
-    color: var(--bg-color); 
-    transform: translateY(-8px); 
+    color: var(--bg-color);
+    transform: translateY(-8px);
     border-color: var(--text-color);
 }
+
 .social-icons svg {
     width: 26px;
     height: 26px;
-    fill: currentColor; 
+    fill: currentColor;
     transition: transform 0.4s ease;
 }
+
 .social-icons a:hover svg {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 /* =========================================
@@ -471,10 +539,16 @@ footer {
 .fade-in-up {
     opacity: 0;
     transform: translateY(40px);
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
+
+.delay-1 {
+    animation-delay: 0.15s;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -487,9 +561,9 @@ footer {
    7. DARK THEME & TOGGLE BUTTON
    ========================================= */
 body.dark-theme {
-    --bg-color: #111111; 
-    --text-color: #f4f4f4; 
-    --accent-color: #888888; 
+    --bg-color: #111111;
+    --text-color: #f4f4f4;
+    --accent-color: #888888;
 }
 
 /* Adds a smooth fade only when you click the button */
@@ -519,22 +593,40 @@ body.theme-transition {
 }
 
 /* ICON VISIBILITY LOGIC */
-.sun-icon { display: none; } /* Hide sun by default */
-.moon-icon { display: block; } /* Show moon by default */
+.sun-icon {
+    display: none;
+}
+
+/* Hide sun by default */
+.moon-icon {
+    display: block;
+}
+
+/* Show moon by default */
 
 /* When dark mode is active, flip the icons! */
-body.dark-theme .sun-icon { display: block; }
-body.dark-theme .moon-icon { display: none; }
+body.dark-theme .sun-icon {
+    display: block;
+}
+
+body.dark-theme .moon-icon {
+    display: none;
+}
 
 
 /* =========================================
    8. MASTER TIMELINE PRELOADER
    ========================================= */
 #preloader {
-    position: fixed; top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: #111111;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 10000;
     transition: background-color 1.2s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.5s ease;
 }
@@ -542,67 +634,93 @@ body.dark-theme .moon-icon { display: none; }
 /* Phase 1: Slide Down in Gray */
 .preloader-text {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(3rem, 8vw, 6rem); 
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
-    color: #333333; /* Dark Gray */
-    white-space: nowrap; margin: 0;
-    
+    color: #333333;
+    /* Dark Gray */
+    white-space: nowrap;
+    margin: 0;
+
     /* The Entrance Slide */
     animation: preloaderFadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes preloaderFadeInDown {
-    0% { opacity: 0; transform: translate(-50%, -70%); }
-    100% { opacity: 1; transform: translate(-50%, -50%); }
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -70%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Phase 2: The White Cursor Wipe */
 .preloader-text::before {
     content: attr(data-text);
-    position: absolute; top: 0; left: 0;
-    width: 0%; /* Starts invisible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    /* Starts invisible */
     height: 100%;
-    color: #f4f4f4; /* Bright White */
+    color: #f4f4f4;
+    /* Bright White */
     overflow: hidden;
-    border-right: 4px solid #f4f4f4; /* The Cursor! */
+    border-right: 4px solid #f4f4f4;
+    /* The Cursor! */
     white-space: nowrap;
     transition: width 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 /* Phase 3: The Smooth Frenzy State */
 .preloader-text.start-frenzy {
-    color: #f4f4f4; 
-    
+    color: #f4f4f4;
+
     /* 1. Adds a subtle analog glow to soften the edges */
-    text-shadow: 0 0 15px rgba(244, 244, 244, 0.4); 
-    
+    text-shadow: 0 0 15px rgba(244, 244, 244, 0.4);
+
     /* 2. Forces the browser to smoothly glide between font sizes and spacing */
     transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .preloader-text.start-frenzy::before {
-    display: none; 
+    display: none;
 }
 
 /* JavaScript triggers this to make the cursor swipe */
-.preloader-text.run-wipe::before { width: 100%; }
+.preloader-text.run-wipe::before {
+    width: 100%;
+}
 
 /* JavaScript triggers this to hide the cursor before the frenzy */
-.preloader-text.hide-cursor::before { border-right-color: transparent; }
+.preloader-text.hide-cursor::before {
+    border-right-color: transparent;
+}
 
 /* Phase 4: The Fusion Flight */
 .preloader-text.fuse-text {
-    transition: top 1.2s cubic-bezier(0.77, 0, 0.175, 1), 
-                left 1.2s cubic-bezier(0.77, 0, 0.175, 1), 
-                transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), 
-                opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-    opacity: 0; /* Fades out on impact */
+    transition: top 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+        left 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+        transform 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+    /* Fades out on impact */
 }
 
-#preloader.fuse-bg { background-color: transparent; pointer-events: none; }
-.preloader-hidden { visibility: hidden !important; }
+#preloader.fuse-bg {
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.preloader-hidden {
+    visibility: hidden !important;
+}
 
 /* =========================================
    MOBILE RESPONSIVE RULES (Phones & Tablets)
@@ -636,9 +754,11 @@ body.dark-theme .moon-icon { display: none; }
 .hamburger.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
@@ -649,7 +769,9 @@ body.dark-theme .moon-icon { display: none; }
         padding: 2rem 4%;
     }
 
-    .hero { margin-bottom: 4rem; }
+    .hero {
+        margin-bottom: 4rem;
+    }
 
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -657,7 +779,9 @@ body.dark-theme .moon-icon { display: none; }
         margin-bottom: 4rem;
     }
 
-    nav { margin-bottom: 2.5rem; }
+    nav {
+        margin-bottom: 2.5rem;
+    }
 }
 
 /* ---- Mobile breakpoint ---- */
@@ -714,7 +838,9 @@ body.dark-theme .moon-icon { display: none; }
     }
 
     /* HERO */
-    .hero { margin-bottom: 3rem; }
+    .hero {
+        margin-bottom: 3rem;
+    }
 
     .hero-photo {
         width: 140px;
@@ -819,12 +945,32 @@ body.dark-theme .moon-icon { display: none; }
 }
 
 /* Touch-friendly tap targets */
-.button, .nav-link, .nav-links a {
+.button,
+.nav-link,
+.nav-links a {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
 }
 
 h2.section-title {
-    font-size: clamp(2rem, 5vw, 4rem); 
-}
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+}
+}
+
+/* Touch-friendly tap targets */
+.button,
+.nav-link,
+.nav-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+h2.section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
