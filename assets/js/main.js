@@ -21,6 +21,27 @@ allClickables.forEach(item => {
 });
 
 // ==========================================
+// 4.5 HAMBURGER MOBILE MENU TOGGLE
+// ==========================================
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is tapped
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+// ==========================================
 // 5. DARK MODE MEMORY ENGINE (Dark by Default)
 // ==========================================
 const themeToggle = document.getElementById('theme-toggle');
@@ -144,4 +165,37 @@ if (preloader && preloaderText && siteLogo) {
     } else {
         preloader.style.display = 'none';
     }
+}
+
+// ==========================================
+// 7. TYPEWRITER ANIMATION ENGINE
+// ==========================================
+const typewriterEl = document.getElementById('typewriter-text');
+const typewriterSub = document.getElementById('typewriter-sub');
+
+if (typewriterEl) {
+    const fullText = typewriterEl.getAttribute('data-text');
+    let i = 0;
+
+    function typeChar() {
+        if (i < fullText.length) {
+            typewriterEl.textContent += fullText.charAt(i);
+            i++;
+            setTimeout(typeChar, 80);
+        } else {
+            // Typing done — hide cursor after a short pause
+            setTimeout(() => {
+                typewriterEl.classList.add('done');
+            }, 1500);
+
+            // Fade in the subtitle
+            if (typewriterSub) {
+                typewriterSub.classList.remove('hidden');
+                typewriterSub.classList.add('visible');
+            }
+        }
+    }
+
+    // Start typing after a delay to let the page load animations settle
+    setTimeout(typeChar, 1500);
 }

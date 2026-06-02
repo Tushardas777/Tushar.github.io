@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tushar Das | Digital Designer</title>
+    <title>Projects | Tushar Das</title>
     <!-- Ultimate Font Frenzy Library (Asian + Variable Display) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,19 +12,12 @@
 </head>
 <body class="dark-theme">
     <script>
-    // If the memory specifically says 'light', make it light.
-    // Otherwise (or if it's their first visit), force it to be dark!
     if (localStorage.getItem('portfolio-theme') === 'light') {
         document.body.classList.remove('dark-theme');
     } else {
         document.body.classList.add('dark-theme');
     }
 </script>
-   <!--PRELOADER "cinematic splash screen"-->
-
-    <div id="preloader">
-        <h1 class="preloader-text" data-text="Tushar Das™">Tushar Das™</h1>
-    </div>
 
     <div class="custom-cursor"></div>
 
@@ -49,41 +42,14 @@
         </div>
     </nav>
 
-    <header class="hero-centered fade-in-up">
-        <div class="hero-photo">
-            <img src="assets/images/profile.png" alt="Tushar Das" class="profile-img" />
-        </div>
+    <header class="hero">
+        <h1 class="fade-in-up">Projects.</h1>
+        <p class="fade-in-up delay-1">A curated selection of my creative and development work — from branding to digital experiences.</p>
     </header>
-
-    <div class="name-banner fade-in-up delay-1">
-        <div class="marquee-track">
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-        </div>
-        <div class="marquee-track" aria-hidden="true">
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-        </div>
-    </div>
-
-    <div class="hero-text-centered fade-in-up delay-2">
-        <div class="typewriter">
-            <h1 id="typewriter-text" data-text="Shaping Digital Experiences."></h1>
-        </div>
-        <p id="typewriter-sub" class="hero-sub hidden">As a multidisciplinary digital designer, I specialize in crafting minimal, structural layouts and impactful visual identities that elevate brands and engage audiences.</p>
-    </div>
 
     <section class="fade-in-up delay-2">
         <div class="section-label">
-            <span>© Featured Projects ビジュアル</span>
+            <span>© All Projects プロジェクト</span>
             <span>Creative Development</span>
         </div>
         
@@ -101,28 +67,20 @@
                     <div class="project-category">Web Design</div>
                 </div>
             </a>
-        </div>
-    </section>
 
-    <section>
-        <div class="section-label">
-            <span>© Capabilities</span>
-            <span>Digital Execution</span>
-        </div>
-        
-        <div class="grid">
-            <div>
-                <h3 style="margin-bottom: 1rem;">Art Direction</h3>
-                <p style="color: var(--accent-color);">We guide every visual decision from start to finish, ensuring clarity, emotion, and impact across every touchpoint.</p>
-            </div>
-            <div>
-                <h3 style="margin-bottom: 1rem;">Brand Identity</h3>
-                <p style="color: var(--accent-color);">From strategy to execution, we shape consistent brand systems that speak clearly and feel uniquely ownable.</p>
-            </div>
-            <div>
-                <h3 style="margin-bottom: 1rem;">Motion Direction</h3>
-                <p style="color: var(--accent-color);">We use motion as a design tool — adding clarity, rhythm, and energy to digital experiences with intention.</p>
-            </div>
+            <a href="#" class="project-card" style="background: url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=600&auto=format&fit=crop') center/cover;">
+                <div class="card-content">
+                    <div class="project-title">Project 3</div>
+                    <div class="project-category">UI/UX Design</div>
+                </div>
+            </a>
+
+            <a href="#" class="project-card" style="background: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=600&auto=format&fit=crop') center/cover;">
+                <div class="card-content">
+                    <div class="project-title">Project 4</div>
+                    <div class="project-category">Motion Design</div>
+                </div>
+            </a>
         </div>
     </section>
 
