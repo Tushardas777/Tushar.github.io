@@ -1,164 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tushar Das | Digital Designer</title>
-    <!-- Ultimate Font Frenzy Library (Asian + Variable Display) -->
+    <meta name="description" content="A premium, customizable, and responsive landing page template for developers and creators. Built with vanilla HTML, CSS, and JS.">
+    <title>Quantum Minimalist | Premium Web Boilerplate</title>
+    
+    <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&family=Unbounded:wght@200..900&family=Inter:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Core Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="dark-theme">
-    <script>
-        // If the memory specifically says 'light', make it light.
-        // Otherwise (or if it's their first visit), force it to be dark!
-        if (localStorage.getItem('portfolio-theme') === 'light') {
-            document.body.classList.remove('dark-theme');
-        } else {
-            document.body.classList.add('dark-theme');
-        }
-    </script>
-    <!--PRELOADER "cinematic splash screen"-->
+    <!-- Background Ambient Gradients -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
 
-    <div id="preloader">
-        <h1 class="preloader-text" data-text="Tushar Das™">Tushar Das™</h1>
-    </div>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" id="nav-logo">
+                <span class="logo-accent">⚡</span> Quantum
+            </a>
+            
+            <div class="nav-links" id="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
 
-    <div class="custom-cursor"></div>
-
-    <nav>
-        <div class="logo"><span class="logo-first">Tushar</span> <span class="logo-last">Das™</span></div>
-        <div class="nav-actions">
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="profile.html">Profile</a>
-            <a href="contact.html">Contact</a>
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <!-- Mobile Navigation Toggle -->
+                <button class="hamburger-btn" id="hamburger" aria-label="Toggle Mobile Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <header class="hero-centered fade-in-up">
-        <div class="hero-photo">
-            <img src="assets/images/profile.png" alt="Tushar Das" class="profile-img" />
-        </div>
-        <div class="hero-roles">Digital Designer &bull; Web Developer &bull; Creator</div>
-    </header>
-
-    <div class="name-banner fade-in-up delay-1">
-        <div class="marquee-track">
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-        </div>
-        <div class="marquee-track" aria-hidden="true">
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-            <h2>TUSHAR</h2>
-        </div>
-    </div>
-
-    <div class="hero-text-centered fade-in-up delay-2">
-        <h2 id="about-me-title" class="about-me-title hero-sub hidden">About Me</h2>
-        <div class="typewriter">
-            <h1 id="typewriter-text" data-text="Shaping Digital Experiences."></h1>
-        </div>
-        <p id="typewriter-sub" class="hero-sub hidden">As a multidisciplinary digital designer, I specialize in crafting
-            minimal, structural layouts and impactful visual identities that elevate brands and engage audiences.</p>
-    </div>
-
-    <section class="fade-in-up delay-2">
-        <div class="section-label">
-            <span>© Featured Projects ビジュアル</span>
-            <span>Creative Development</span>
-        </div>
-
-        <div class="grid">
-            <a href="#" class="project-card" style="background: url('assets/images/image1.png') center/cover;">
-                <div class="card-content">
-                    <div class="project-title">Project 1</div>
-                    <div class="project-category">Branding</div>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="badge fade-in">Boilerplate Template</div>
+                <h1 class="hero-title fade-in delay-1">
+                    Design <span class="gradient-text">Stunning</span> Web Experiences
+                </h1>
+                <p class="hero-subtitle fade-in delay-2">
+                    A beautifully crafted, modern single-page template designed with clean vanilla HTML, CSS, and JS. Easily customize colors, fonts, and contents.
+                </p>
+                <div class="hero-actions fade-in delay-3">
+                    <a href="#features" class="btn btn-primary">Explore Features</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
-            </a>
+            </div>
+        </section>
 
-            <a href="#" class="project-card"
-                style="background: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=600&auto=format&fit=crop') center/cover;">
-                <div class="card-content">
-                    <div class="project-title">Project 2</div>
-                    <div class="project-category">Web Design</div>
+        <!-- Features Grid Section -->
+        <section id="features" class="section">
+            <div class="section-header">
+                <span class="section-subtitle">What's Inside</span>
+                <h2 class="section-title">Core Features & Capabilities</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="grid-container">
+                <!-- Feature Card 1 -->
+                <div class="feature-card">
+                    <div class="card-icon">🎨</div>
+                    <h3 class="card-title">Clean CSS variables</h3>
+                    <p class="card-text">Change your brand colors, fonts, margins, and transition curves instantly from a single stylesheet root.</p>
                 </div>
-            </a>
-        </div>
-    </section>
+                
+                <!-- Feature Card 2 -->
+                <div class="feature-card">
+                    <div class="card-icon">🌓</div>
+                    <h3 class="card-title">Sleek Theme System</h3>
+                    <p class="card-text">Equipped with automatic theme initialization and manual override toggle. Saves user choices to LocalStorage.</p>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="feature-card">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">Fully Responsive</h3>
+                    <p class="card-text">Meticulously constructed using modern CSS Grid and Flexbox layouts. Looks pristine on mobile and UHD displays.</p>
+                </div>
 
-    <section>
-        <div class="section-label">
-            <span>© Capabilities</span>
-            <span>Digital Execution</span>
-        </div>
+                <!-- Feature Card 4 -->
+                <div class="feature-card">
+                    <div class="card-icon">✨</div>
+                    <h3 class="card-title">Micro-Animations</h3>
+                    <p class="card-text">Engaging glassmorphic hover reflections, custom transitions, scroll-reveals, and smooth hover effects.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="grid">
-            <div>
-                <h3 style="margin-bottom: 1rem;">Art Direction</h3>
-                <p style="color: var(--accent-color);">We guide every visual decision from start to finish, ensuring
-                    clarity, emotion, and impact across every touchpoint.</p>
+        <!-- About Section -->
+        <section id="about" class="section bg-glass">
+            <div class="about-container">
+                <div class="about-text">
+                    <span class="section-subtitle">About This Project</span>
+                    <h2 class="section-title">Why start with this template?</h2>
+                    <p class="about-description">
+                        Creating modern pages from scratch shouldn't mean styling standard forms, navbars, and buttons every time. This boilerplate provides a beautifully animated skeleton using vanilla technologies to skip the boring boilerplate setup and jump straight to editing.
+                    </p>
+                    <ul class="about-list">
+                        <li><strong>No bloat:</strong> Zero bundlers or dependencies required.</li>
+                        <li><strong>SEO optimized:</strong> Semantic markup for web crawlers.</li>
+                        <li><strong>Smooth flow:</strong> Integrated layout transitions.</li>
+                    </ul>
+                </div>
+                <div class="about-graphic">
+                    <div class="graphic-element circle-glow"></div>
+                    <div class="graphic-element glass-card">
+                        <div class="card-preview-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="card-preview-body">
+                            <code>
+                                <span class="code-comment">// Customize colors</span><br>
+                                <span class="code-var">--primary-color</span>: <span class="code-val">#ff5722</span>;<br>
+                                <span class="code-var">--font-family</span>: <span class="code-val">'Inter'</span>;<br>
+                                <span class="code-comment">// Ready to edit!</span>
+                            </code>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3 style="margin-bottom: 1rem;">Brand Identity</h3>
-                <p style="color: var(--accent-color);">From strategy to execution, we shape consistent brand systems
-                    that speak clearly and feel uniquely ownable.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <span class="section-subtitle">Reach Out</span>
+                <h2 class="section-title">Let's Build Something</h2>
+                <div class="section-divider"></div>
             </div>
-            <div>
-                <h3 style="margin-bottom: 1rem;">Motion Direction</h3>
-                <p style="color: var(--accent-color);">We use motion as a design tool — adding clarity, rhythm, and
-                    energy to digital experiences with intention.</p>
+            
+            <div class="contact-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Let's collaborate on..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Send Message <span class="btn-icon">→</span>
+                    </button>
+                    <div id="form-feedback" class="form-feedback hidden"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; <span id="current-year">2026</span> Quantum Minimalist. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms</a>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div>©2024 Digital Designer. All rights reserved.</div>
     </footer>
 
-    <!-- Three.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="assets/js/three-scene.js"></script>
+    <!-- Interactive Logic Script -->
     <script src="assets/js/main.js"></script>
 </body>
-
 </html>
